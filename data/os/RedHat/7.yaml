@@ -1,23 +1,21 @@
 ---
 lookup_options:
   slurm::install::pkgs_core:
-    merge: unique
+    merge: "unique"
   slurm::install::pkgs_deps:
-    merge: unique
+    merge: "unique"
   slurm::install::pkgs_munge:
-    merge: unique
+    merge: "unique"
   slurm::install::pkgs_pam:
-    merge: unique
+    merge: "unique"
   slurm::install::pkgs_slurmctld:
-    merge: unique
+    merge: "unique"
   slurm::install::pkgs_slurmdbd:
-    merge: unique
+    merge: "unique"
   slurm::install::pkgs_submit:
-    merge: unique
+    merge: "unique"
   slurm::install::pkgs_worker:
-    merge: unique
-
-
+    merge: "unique"
 slurm::install::pkgs_core:
   - "slurm"
 #  - "slurm-plugins"

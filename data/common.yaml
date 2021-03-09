@@ -1,7 +1,5 @@
 ---
 lookup_options:
   slurm::config::dbdsettings:
-    merge: hash
-
+    merge: "hash"
 slurm::config::dbdsettings: {}
-
