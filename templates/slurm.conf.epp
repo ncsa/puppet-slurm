@@ -1,0 +1,9 @@
+<% $slurm::config::settings.each | $key, $val | { -%>
+<%= sprintf( '%s=%s', $key, $val ) %>
+<% } -%>
+<% $slurm::config::nodes.each | $key, $val | { -%>
+<%= sprintf( 'NodeName=%s %s', $key, $val ) %>
+<% } -%>
+<% $slurm::config::partitions.each | $key, $val | { -%>
+<%= sprintf( 'PartitionName=%s %s', $key, $val ) %>
+<% } -%>

@@ -1,0 +1,3 @@
+<% $slurm::config::cgroupsettings.each | $key, $val | { -%>
+<%= sprintf( '%s=%s', $key, $val ) %>
+<% } -%>

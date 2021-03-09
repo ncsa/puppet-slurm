@@ -1,0 +1,41 @@
+---
+lookup_options:
+  slurm::install::pkgs_core:
+    merge: unique
+  slurm::install::pkgs_deps:
+    merge: unique
+  slurm::install::pkgs_munge:
+    merge: unique
+  slurm::install::pkgs_pam:
+    merge: unique
+  slurm::install::pkgs_slurmctld:
+    merge: unique
+  slurm::install::pkgs_slurmdbd:
+    merge: unique
+  slurm::install::pkgs_submit:
+    merge: unique
+  slurm::install::pkgs_worker:
+    merge: unique
+
+
+slurm::install::pkgs_core:
+  - "slurm"
+#  - "slurm-plugins"
+slurm::install::pkgs_deps: []
+#  - "perl-DBI"
+#  - "perl-Switch"
+slurm::install::pkgs_munge:
+  - "munge"
+#  - "slurm-munge"
+slurm::install::pkgs_pam:
+  - "slurm-pam_slurm"
+slurm::install::pkgs_slurmctld:
+  - "slurm-slurmctld"
+  - "slurm-perlapi"
+slurm::install::pkgs_slurmdbd:
+  - "slurm-slurmdbd"
+slurm::install::pkgs_submit:
+  - "slurm-perlapi"
+slurm::install::pkgs_worker:
+  - "slurm-perlapi"
+  - "slurm-slurmd"
