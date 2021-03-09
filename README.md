@@ -1,7 +1,5 @@
 # slurm
 
-# profile_audit
-
 ![pdk-validate](https://github.com/ncsa/puppet-slurm/workflows/pdk-validate/badge.svg)
 ![yamllint](https://github.com/ncsa/puppet-slurm/workflows/yamllint/badge.svg)
 
@@ -79,12 +77,9 @@ Default: 'medium-loud'.
 
 ## Limitations
 
-In the Limitations section, list any incompatibilities, known issues, or other warnings.
+This module can use the following module to supply munge for authentication:
+- https://forge.puppet.com/modules/treydock/munge
 
 ## Development
 
-In the Development section, tell other users the ground rules for contributing to your project and how they should submit their work.
-
-## Release Notes/Contributors/Etc. **Optional**
-
-If you aren't using changelog, put your release notes here (though you should consider using changelog). You can also add any additional sections you feel are necessary or important to include here. Please use the `## ` header.
+This Puppet module is managed by NCSA for internal usage.

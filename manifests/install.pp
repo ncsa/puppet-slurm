@@ -6,7 +6,6 @@
 #                 For example: 20.11.2-2.el7
 # @param [Array[String]] pkgs_core Core RPMs for Slurm.
 # @param [Array[String]] pkgs_deps RPMs that are dependencies for Slurm.
-# @param [Array[String]] pkgs_munge RPMs needed for the Munge service.
 # @param [Array[String]] pkgs_pam RPMs needed for slurm_pam_adopt support.
 # @param [Array[String]] pkgs_worker RPMs needed only on worker nodes.
 class slurm::install (
@@ -26,7 +25,6 @@ class slurm::install (
     # Define parameters
     Array[String] $pkgs_core,
     Array[String] $pkgs_deps,
-    Array[String] $pkgs_munge,
     Array[String] $pkgs_pam,
     Array[String] $pkgs_slurmctld,
     Array[String] $pkgs_slurmdbd,
@@ -59,7 +57,6 @@ class slurm::install (
     $ensure_packages_defaults = {'require' => 'Yumrepo[slurm]'}
 
     # install required packages
-    ensure_packages( $pkgs_munge, $ensure_packages_defaults)
     ensure_packages( $pkgs_deps, $ensure_packages_defaults )
     ensure_packages( $pkgs_core, $ensure_packages_defaults )
 

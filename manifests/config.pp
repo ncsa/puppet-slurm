@@ -5,8 +5,6 @@
 # sampled from:
 # https://github.com/cernops/puppet-slurm/blob/master/manifests/config.pp
 #
-# @param [String] munge_key
-#     Contents of Munge key for the cluster.
 # @param [Hash] nodes
 #     NodeName defs for slurm.conf (key is PartitionName value; value is settings as String).
 # @param [Hash] partitions
@@ -16,28 +14,10 @@
 class slurm::config(
     Hash   $cgroupsettings,
     Hash   $dbdsettings,
-    String $munge_key,
     Hash   $nodes,
     Hash   $partitions,
     Hash   $settings,
 ) {
-
-    file { '/etc/munge':
-        ensure => directory,
-        owner  => 'munge',
-        group  => 'munge',
-        mode   => '0700',
-    }
-
-    $munge_key_sensitive = Sensitive( $munge_key )
-    file{ '/etc/munge/munge.key':
-        ensure  => file,
-        owner   => 'munge',
-        group   => 'munge',
-        mode    => '0400',
-        content => $munge_key_sensitive,
-        notify  => Service[ $slurm::service::munge_service_name ],
-    }
 
     file { '/etc/slurm':
         ensure => directory,

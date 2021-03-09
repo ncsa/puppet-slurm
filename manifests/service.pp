@@ -1,17 +1,9 @@
 # @summary:
 class slurm::service (
 
-    String $munge_service_name,
     String $slurmd_service_name,
 
 ) {
-    service { $munge_service_name:
-        ensure     => running,
-        hasstatus  => true,
-        hasrestart => true,
-        enable     => true,
-        require    => Class['slurm::config'];
-    }
 
     # Only worker nodes need to start the slurm daemons.
     if $slurm::is_worker_node {

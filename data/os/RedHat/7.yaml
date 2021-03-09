@@ -4,8 +4,6 @@ lookup_options:
     merge: "unique"
   slurm::install::pkgs_deps:
     merge: "unique"
-  slurm::install::pkgs_munge:
-    merge: "unique"
   slurm::install::pkgs_pam:
     merge: "unique"
   slurm::install::pkgs_slurmctld:
@@ -22,9 +20,6 @@ slurm::install::pkgs_core:
 slurm::install::pkgs_deps: []
 #  - "perl-DBI"
 #  - "perl-Switch"
-slurm::install::pkgs_munge:
-  - "munge"
-#  - "slurm-munge"
 slurm::install::pkgs_pam:
   - "slurm-pam_slurm"
 slurm::install::pkgs_slurmctld:

@@ -1,3 +1,2 @@
 ---
-slurm::service::munge_service_name: "munge"
 slurm::service::slurmd_service_name: "slurmd"
