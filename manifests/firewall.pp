@@ -56,6 +56,12 @@ class slurm::firewall {
                 source => $network_value,
             }
         }
+        firewall { "0304 slurm srun from ctld_host ${slurm::ctld_host}":
+            dport  => '60001-63000',
+            proto  => tcp,
+            action => accept,
+            source => $slurm::ctld_host,
+        }
     }
 
     if $slurm::is_worker_node {
